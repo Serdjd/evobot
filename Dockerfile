@@ -28,5 +28,3 @@ FROM node:${NODE_VERSION} as prod
 COPY --chown=${USER}:${USER} package*.json ./
 COPY --from=build --chown=${USER}:${USER} /home/evobot/node_modules ./node_modules
 COPY --from=build --chown=${USER}:${USER} /home/evobot/dist ./dist
-
-CMD [ "node", "./dist/index.js" ]
